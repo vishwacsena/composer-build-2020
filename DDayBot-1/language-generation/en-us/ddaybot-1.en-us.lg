@@ -19,9 +19,18 @@
 # DateTimeInput_InvalidPrompt_yam15a()
 - Sorry. I just need the date and month please.
 # SendActivity_3SknJ6()
-[Activity
-    Text = Looking up facts for ${formatDateTime(turn.dDay, 'dddd, MMMM ddd')} via http://history.muffinlabs.com/date/${month(turn.dDay)}/${date(turn.dDay)}
-    Type = typing
-] 
-# SendActivity_uNTrNa()
-- Http response: I have ${turn.httpRes}
+- Looking up facts for ${formatDateTime(turn.dDay, 'dddd, MMMM ddd')} via http://history.muffinlabs.com/date/${formatDateTime(turn.dDay, 'MM')}/${formatDateTime(turn.dDay, 'dd')}
+
+# SendActivity_RC5Dqy()
+- Sorry, I did not find any facts for that date..
+# SendActivity_1WQvxe()
+- ```
+Here are some facts for **${turn.httpRes.content.date}**...
+
+**Celebrity birthday**
+[${turn.rBFact.links[0].title}](${turn.rBFact.links[0].link}) - [${turn.rBFact.year}] ${turn.rBFact.text}
+
+**Random event**
+[${turn.rEFact.links[0].title}](${turn.rEFact.links[0].link}) - [${turn.rEFact.year}] ${turn.rEFact.text}
+
+```

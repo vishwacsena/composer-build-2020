@@ -328,16 +328,66 @@
             "id": "snlFaB"
           },
           "method": "GET",
-          "url": "http://history.muffinlabs.com/date/${month(turn.dDay)}/${date(turn.dDay)}",
+          "url": "http://history.muffinlabs.com/date/${formatDateTime(turn.dDay, 'MM')}/${formatDateTime(turn.dDay, 'dd')}",
           "responseType": "json",
           "resultProperty": "turn.httpRes"
         },
         {
-          "$kind": "Microsoft.SendActivity",
+          "$kind": "Microsoft.IfCondition",
           "$designer": {
-            "id": "uNTrNa"
+            "id": "Ql1BiC"
           },
-          "activity": "${SendActivity_uNTrNa()}"
+          "condition": "turn.httpRes.content.data != null",
+          "actions": [
+            {
+              "$kind": "Microsoft.SetProperties",
+              "$designer": {
+                "id": "W6bwiT"
+              },
+              "assignments": [
+                {
+                  "property": "turn.BirthFacts",
+                  "value": "=turn.httpRes.content.data.Births"
+                },
+                {
+                  "property": "turn.randomBirthFactsId",
+                  "value": "=rand(0, count(turn.BirthFacts))"
+                },
+                {
+                  "property": "turn.rBFact",
+                  "value": "=turn.BirthFacts[turn.randomBirthFactsId]"
+                },
+                {
+                  "property": "turn.events",
+                  "value": "=turn.httpRes.content.data.Events"
+                },
+                {
+                  "property": "turn.randomEventId",
+                  "value": "=rand(0, count(turn.events))"
+                },
+                {
+                  "property": "turn.rEFact",
+                  "value": "=turn.events[turn.randomEventId]"
+                }
+              ]
+            },
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "1WQvxe"
+              },
+              "activity": "${SendActivity_1WQvxe()}"
+            }
+          ],
+          "elseActions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "RC5Dqy"
+              },
+              "activity": "${SendActivity_RC5Dqy()}"
+            }
+          ]
         }
       ]
     }
