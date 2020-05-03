@@ -19,7 +19,7 @@
 # DateTimeInput_InvalidPrompt_yam15a()
 - Sorry. I just need the date and month please.
 # SendActivity_3SknJ6()
-- Looking up facts for ${formatDateTime(turn.dDay, 'dddd, MMMM ddd')} via http://history.muffinlabs.com/date/${formatDateTime(turn.dDay, 'MM')}/${formatDateTime(turn.dDay, 'dd')}
+- Looking up facts for ${formatDateTime(turn.dDay, 'dddd, MMMM ddd')}
 
 # SendActivity_RC5Dqy()
 - Sorry, I did not find any facts for that date..
