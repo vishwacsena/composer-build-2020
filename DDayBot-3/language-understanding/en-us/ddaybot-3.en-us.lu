@@ -1,0 +1,50 @@
+
+# Help
+- Help
+- I need help
+- Please help
+
+# Cancel
+- Cancel
+- Abandon
+- Discontinue
+- Stop that
+- Please cancel
+
+# UserProfile
+- Hi
+- Profile
+- My name is Vishwac
+- Change my name to Kannan
+- Please call me Scott
+- I was born on May 9th 1983
+
+> add prebuilt entity to recognize user name
+@ prebuilt personName
+
+> add prebuilt entity to recognize user's date of birth
+@ prebuilt datetimeV2
+
+# WhatHappenedOn
+- what happend on may 9th?
+- what is special about may 9th?
+- can you get me historic facts about may 9th?
+- historic events for may 9th?
+- what happened on my birthday?
+- what is special about my birthday?
+
+@ prebuilt datetimeV2
+
+
+# GetDaysTill
+- how many days till my birthday
+- how many days left?
+- how many days to christmas
+- what day is my birthday day this year?
+
+@ prebuilt datetimeV2
+@ list event =
+	- birthday :
+		- bday
+		- b'day
+		- birth day

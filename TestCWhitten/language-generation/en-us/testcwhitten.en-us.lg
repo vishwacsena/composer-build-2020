@@ -1,0 +1,9 @@
+[import](common.lg)
+
+# SendActivity_Welcome
+- ${WelcomeUser()}
+
+# SendActivity_8L95Ta()
+- Method 1: I got ${dialog.userprofile}
+# SendActivity_4nBYsB()
+- Method 2 : I have ${dialog.result}

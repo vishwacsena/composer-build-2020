@@ -1,0 +1,64 @@
+[import](common.lg)
+
+# TextInput_Prompt_0MqbDY()
+- What is your name?
+# TextInput_InvalidPrompt_0MqbDY()
+- Sorry, '${this.value}' does not work. I'm looking for 3-50 characters. What is your name? 
+# TextInput_DefaultValueResponse_0MqbDY()
+- Sorry this is not working. For now, I will set your name to '${class.defaultValue}'. You can always say 'My name is <your name>' to re-introduce yourself to me.
+# DateTimeInput_Prompt_eXpEJa()
+- Hey ${user.profile.name}, what your date and month of birth?
+# DateTimeInput_InvalidPrompt_eXpEJa()
+- Sorry '${turn.activity.text}' does not work. Can you just give me your date and month of birth? 
+# SendActivity_p15tPb()
+- ${ProfileReadBack()}
+
+> Additional templates
+# ProfileReadBack
+- ${AckPhrase()} ${user.profile.name}. Your next birthday is on ${DateReadBack(user.profile.birthday)}. ${ZodiacReadBack(user.profile.birthday)}
+
+# ZodiacReadBack(param)
+- Your zodiac sign is ${GetZodiac(GetMonth(user.profile.birthday), GetDateAsNumber(user.profile.birthday))}.
+
+# GetMonth(param)
+- ${toLower(formatDateTime(param, 'MMM'))}
+
+# GetDateAsNumber(param)
+- ${int(formatDateTime(param, 'dd'))}
+
+# GetZodiac (month, date)
+- SWITCH: ${month}
+    - CASE: ${'jan'}
+        - ${if(date <= 19, 'Capricorn, the Goat', 'Aquarius, the Water Bearer')} 
+    - CASE: ${'feb'}
+        - ${if(date <= 18, 'Aquarius, the Water Bearer', 'Pisces, the Fishes')} 
+    - CASE: ${'mar'}
+        - ${if(date <= 20, 'Pisces, the Fishes', 'Ares, the Ram')} 
+    - CASE: ${'apr'}
+        - ${if(date <= 19, 'Ares, the Ram', 'Taurus, the Bull')} 
+    - CASE: ${'may'}
+        - ${if(date <= 20, 'Taurus, the Bull', 'Gemini, the twins')} 
+    - CASE: ${'jun'}
+        - ${if(date <= 21, 'Gemini, the twins', 'Cancer, the crab')} 
+    - CASE: ${'jul'}
+        - ${if(date <= 22, 'Cancer, the crab', 'Leo, the lion')} 
+    - CASE: ${'aug'}
+        - ${if(date <= 22, 'Leo, the lion', 'Virgo, the virgin')} 
+    - CASE: ${'sep'}
+        - ${if(date <= 22, 'Virgo, the virgin', 'Libra, the balance')} 
+    - CASE: ${'oct'}
+        - ${if(date <= 23, 'Libra, the balance', 'Scorpio, the Scorpion')} 
+    - CASE: ${'nov'}
+        - ${if(date <= 21, 'Scorpio, the Scorpion', 'Sagittarius, the Archer')} 
+    - CASE: ${'dec'}
+        - ${if(date <= 21, 'Sagittarius, the Archer', 'Capricorn, the Goat')} 
+    - DEFAULT: 
+        - Unknown zodiac sign
+
+# DateReadBack (fullDate)
+- ${formatDateTime(fullDate, 'dddd, MMMM dd yyy')}
+
+# AckPhrase
+- Thanks
+- Thank you
+- That's great

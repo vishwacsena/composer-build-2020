@@ -1,0 +1,38 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "WzH1V4",
+    "name": "RetType2"
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "id": "CMGZzH"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SetProperties",
+          "$designer": {
+            "id": "q1QWVk"
+          },
+          "assignments": [
+            {
+              "property": "dialog.result.username",
+              "value": "vishwac2"
+            },
+            {
+              "property": "dialog.result.age",
+              "value": "50"
+            }
+          ]
+        }
+      ],
+      "defaultResultProperty": "dialog.result"
+    }
+  ],
+  "generator": "RetType2.lg"
+}
