@@ -13,18 +13,10 @@
 - Sure, cancelling all.
 # SendActivity_5sFgva()
 - No worries!
-# TextInput_Prompt_7prSzp()
-- What is your name?
-# TextInput_InvalidPrompt_7prSzp()
-- Sorry '${this.value}' does not work. Looking for a value between 3-50 characters in length. What is your name?
-# TextInput_DefaultValueResponse_7prSzp()
-- Sorry, this is not working. I'm going with '${class.defaultValue}' for now. You can always say "My name is <your name>" to re-introduce yourself to me.
 
-# DateTimeInput_Prompt_rPiZSd()
-- Hello ${user.profile.name}, what is your date of birth (day and month is sufficient)
-# SendActivity_rcrLT6()
-- Thanks ${user.profile.name}, your next birth day is on ${formatDateTime(user.profile.birthday, 'ddd, MMMM dd yyy')}
-# DateTimeInput_Prompt_lcrOui()
-- What date?
-# DateTimeInput_InvalidPrompt_rPiZSd()
-- Sorry '${turn.activity.text}' does not work. Can I get your month and date of birth?
+
+
+
+
+# SendActivity_BHxOzL()
+- I do not have your profile information yet. Let's get that completed.
