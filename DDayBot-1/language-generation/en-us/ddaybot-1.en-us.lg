@@ -1,0 +1,25 @@
+[import](common.lg)
+# help()
+- Hello, I'm the D-Day bot. How can I help? 
+# SendActivity_1vzU5f()
+- Sure, I'm happy to help. I'm a simple D-Day counter bot. You can ask me 'How many days till <eventName>'
+# SendActivity_aAB8ly()
+- Sure, I'll cancel that.
+# SendActivity_3d24c9()
+- I do not know anything about you yet. Let's get started...
+# SendActivity_fCfPY7()
+- Sorry that's not a valid date! Give me an exact month, date and year please!
+
+# SendActivity_jQNsph()
+- **${substring(turn.daysDiff, 0, 5)}** days till ${formatDateTime(turn.dDay, 'dddd, MMMM dd yyy')}
+# SendActivity_thCiyv()
+- I need a bit of information about you.. Let's try this..
+# DateTimeInput_Prompt_yam15a()
+- Sure. Give me the date, month please.
+# DateTimeInput_InvalidPrompt_yam15a()
+- Sorry. I just need the date and month please.
+# SendActivity_3SknJ6()
+[Activity
+    Text = Looking up facts for ${formatDateTime(turn.dDay, 'dddd, MMMM ddd')}
+    Type = typing
+] 
