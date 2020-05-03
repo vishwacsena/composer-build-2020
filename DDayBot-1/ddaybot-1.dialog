@@ -326,7 +326,18 @@
           "$kind": "Microsoft.HttpRequest",
           "$designer": {
             "id": "snlFaB"
-          }
+          },
+          "method": "GET",
+          "url": "http://history.muffinlabs.com/date/${month(turn.dDay)}/${date(turn.dDay)}",
+          "responseType": "json",
+          "resultProperty": "turn.httpRes"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "uNTrNa"
+          },
+          "activity": "${SendActivity_uNTrNa()}"
         }
       ]
     }

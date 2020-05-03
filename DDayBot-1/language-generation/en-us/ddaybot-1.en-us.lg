@@ -20,6 +20,8 @@
 - Sorry. I just need the date and month please.
 # SendActivity_3SknJ6()
 [Activity
-    Text = Looking up facts for ${formatDateTime(turn.dDay, 'dddd, MMMM ddd')}
+    Text = Looking up facts for ${formatDateTime(turn.dDay, 'dddd, MMMM ddd')} via http://history.muffinlabs.com/date/${month(turn.dDay)}/${date(turn.dDay)}
     Type = typing
 ] 
+# SendActivity_uNTrNa()
+- Http response: I have ${turn.httpRes}
