@@ -1,7 +1,0 @@
-{
-    "$kind": "Microsoft.MultiLanguageRecognizer",
-    "recognizers": {
-        "en-us": "ddaycounter.en-us.lu",
-        "": "ddaycounter.en-us.lu"
-    }
-}
