@@ -1,0 +1,38 @@
+
+# Help
+> add some example phrases to trigger this intent:
+- Help
+- I need help
+- Please help
+
+# Cancel
+- Cancel
+- Abandon
+- Discontinue
+- Stop that
+- Please cancel
+
+# Profile
+- Hi
+- Profile
+- My name is Vishwac
+- Change my name to Kannan
+- Please call me Scott
+- I was born on May 9th 1983
+
+> add prebuilt entity to recognize user name
+@ prebuilt personName
+
+> add prebuilt entity to recognize user's date of birth
+@ prebuilt datetimeV2
+
+# GetDaysTill
+- how many days till my {@event = birthday}
+- days till christmas
+- how many days till may 9th?
+
+> add prebuilt entity to capture any dates specified.
+@ prebuilt datetimeV2
+
+> add a machine learned entity to capture event names if specified.
+@ ml event

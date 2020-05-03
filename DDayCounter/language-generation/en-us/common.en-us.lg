@@ -1,0 +1,19 @@
+# SuggestedActionMessage (message, actions, takeCoreActions)
+[Activity
+    Text = ${coalesce(message, null)}
+    SuggestedActions = ${GetSuggestedActions(actions, takeCoreActions)}
+]
+
+# GetSuggestedActions (actions, takeCoreActions)
+- IF: ${ actions != null && takeCoreActions == true }
+    - ${union(actions, GetCoreSuggestedActionsAsList())}  
+- ELSEIF: ${ actions != null && takeCoreActions == false}
+    - ${actions}
+- ELSE: 
+    - ${GetCoreSuggestedActionsAsList()}
+
+# GetCoreSuggestedActionsAsList
+- ${split(CoreSuggestedActions(), ',')}
+
+# CoreSuggestedActions
+- Profile, Trivia, Countdown, Help, Cancel

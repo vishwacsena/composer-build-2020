@@ -1,0 +1,260 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "$designer": {
+      "name": "DDayCounter",
+      "id": "Ld5BjH"
+    }
+  },
+  "autoEndDialog": "true",
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnConversationUpdateActivity",
+      "$designer": {
+        "id": "376720",
+        "name": "WelcomeUser"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.Foreach",
+          "$designer": {
+            "id": "518944",
+            "name": "Loop: for each item"
+          },
+          "itemsProperty": "turn.Activity.membersAdded",
+          "actions": [
+            {
+              "$kind": "Microsoft.IfCondition",
+              "$designer": {
+                "id": "641773",
+                "name": "Branch: if/else"
+              },
+              "condition": "string(dialog.foreach.value.id) != string(turn.Activity.Recipient.id)",
+              "actions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "859266",
+                    "name": "Send a response"
+                  },
+                  "activity": "${SendActivity_859266()}"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "defaultResultProperty": "dialog.result"
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "f8V8Ls"
+      },
+      "intent": "Help",
+      "defaultResultProperty": "dialog.result",
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "peBC8x"
+          },
+          "activity": "${SendActivity_peBC8x()}"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "lrZ7QI"
+      },
+      "intent": "Cancel",
+      "actions": [
+        {
+          "$kind": "Microsoft.ConfirmInput",
+          "$designer": {
+            "id": "W0XQRi"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "defaultLocale": "en-us",
+          "prompt": "${ConfirmInput_Prompt_W0XQRi()}",
+          "property": "turn.confirm"
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "o8cMw2"
+          },
+          "condition": "turn.confirm",
+          "actions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "1EsrSk"
+              },
+              "activity": "${SendActivity_1EsrSk()}"
+            },
+            {
+              "$kind": "Microsoft.CancelAllDialogs",
+              "$designer": {
+                "id": "L0NwM4"
+              },
+              "activityProcessed": true
+            }
+          ],
+          "elseActions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "5sFgva"
+              },
+              "activityProcessed": true,
+              "activity": "${SendActivity_5sFgva()}"
+            }
+          ]
+        }
+      ],
+      "defaultResultProperty": "dialog.result"
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "fuNiUj"
+      },
+      "intent": "Profile",
+      "actions": [
+        {
+          "$kind": "Microsoft.SetProperties",
+          "$designer": {
+            "id": "ASkQb6"
+          },
+          "assignments": [
+            {
+              "property": "user.profile.name",
+              "value": "=@userName"
+            },
+            {
+              "property": "user.profile.birthday",
+              "value": "=@datetimeV2"
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.TextInput",
+          "$designer": {
+            "id": "7prSzp"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${TextInput_Prompt_7prSzp()}",
+          "property": "user.profile.name",
+          "validations": [
+            "count(this.value) >= 3",
+            "count(this.value) <= 50"
+          ],
+          "invalidPrompt": "${TextInput_InvalidPrompt_7prSzp()}",
+          "defaultValueResponse": "${TextInput_DefaultValueResponse_7prSzp()}",
+          "defaultValue": "Human"
+        },
+        {
+          "$kind": "Microsoft.DateTimeInput",
+          "$designer": {
+            "id": "rPiZSd"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${DateTimeInput_Prompt_rPiZSd()}",
+          "property": "user.profile.birthday",
+          "invalidPrompt": "${DateTimeInput_InvalidPrompt_rPiZSd()}",
+          "validations": [
+            "this.value[1] != null"
+          ]
+        },
+        {
+          "$kind": "Microsoft.SetProperty",
+          "$designer": {
+            "id": "WrAdxs"
+          },
+          "property": "user.profile.birthday",
+          "value": "=formatDateTime(user.profile.birthday[1].Value, 'yyyy-MM-ddTHH:mm:ss.fffZ')"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "rcrLT6"
+          },
+          "activity": "${SendActivity_rcrLT6()}"
+        }
+      ],
+      "defaultResultProperty": "dialog.result"
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "7v2bD9"
+      },
+      "intent": "GetDaysTill",
+      "actions": [
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "Z2XS8J"
+          },
+          "condition": "@event == 'birthday'",
+          "actions": [
+            {
+              "$kind": "Microsoft.SetProperty",
+              "$designer": {
+                "id": "bXh1ms"
+              },
+              "property": "turn.dDay",
+              "value": "=user.profile.birthday"
+            }
+          ],
+          "elseActions": [
+            {
+              "$kind": "Microsoft.SetProperty",
+              "$designer": {
+                "id": "zE5Iai"
+              },
+              "property": "turn.dDay",
+              "value": "=@datetimeV2[0].Timex"
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.DateTimeInput",
+          "$designer": {
+            "id": "lcrOui"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${DateTimeInput_Prompt_lcrOui()}",
+          "property": "turn.dDay",
+          "value": "=this.value[0].Timex"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "SsBegR"
+          },
+          "activity": "${SendActivity_SsBegR()}"
+        }
+      ],
+      "defaultResultProperty": "dialog.result"
+    }
+  ],
+  "$schema": "https://raw.githubusercontent.com/microsoft/BotFramework-Composer/stable/Composer/packages/server/schemas/sdk.schema",
+  "generator": "ddaycounter.lg",
+  "recognizer": "ddaycounter.lu"
+}
