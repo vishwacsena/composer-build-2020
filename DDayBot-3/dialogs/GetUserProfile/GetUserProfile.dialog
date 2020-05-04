@@ -100,7 +100,8 @@
           "activity": "${SendActivity_rLhqRN()}"
         }
       ],
-      "condition": "#Why.Score >= 0.8"
+      "condition": "#Why.Score >= 0.8",
+      "defaultResultProperty": "dialog.result"
     }
   ],
   "generator": "GetUserProfile.lg",
