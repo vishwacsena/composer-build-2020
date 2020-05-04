@@ -1,6 +1,6 @@
 {
     "$kind": "Microsoft.LuisRecognizer",
-    "applicationId": "=settings.luis.ddaybot_2_en_us_lu",
+    "applicationId": "=settings.luis.ddaybot_3_en_us_lu",
     "endpoint": "=settings.luis.endpoint",
     "endpointKey": "=settings.luis.endpointKey"
 }

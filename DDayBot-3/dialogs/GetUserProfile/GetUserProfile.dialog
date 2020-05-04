@@ -39,7 +39,7 @@
           "disabled": false,
           "maxTurnCount": 3,
           "alwaysPrompt": false,
-          "allowInterruptions": false,
+          "allowInterruptions": true,
           "property": "user.profile.name",
           "validations": [
             "count(this.value) >= 3",
@@ -48,7 +48,8 @@
           "defaultValue": "Human",
           "prompt": "${TextInput_Prompt_0MqbDY()}",
           "invalidPrompt": "${TextInput_InvalidPrompt_0MqbDY()}",
-          "defaultValueResponse": "${TextInput_DefaultValueResponse_0MqbDY()}"
+          "defaultValueResponse": "${TextInput_DefaultValueResponse_0MqbDY()}",
+          "value": "=@personName"
         },
         {
           "$kind": "Microsoft.DateTimeInput",
@@ -83,7 +84,25 @@
           "activity": "${SendActivity_p15tPb()}"
         }
       ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "y1dcNs"
+      },
+      "intent": "Why",
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "rLhqRN"
+          },
+          "activity": "${SendActivity_rLhqRN()}"
+        }
+      ],
+      "condition": "#Why.Score >= 0.8"
     }
   ],
-  "generator": "GetUserProfile.lg"
+  "generator": "GetUserProfile.lg",
+  "recognizer": "GetUserProfile.lu"
 }

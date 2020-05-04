@@ -3,7 +3,6 @@
   "$designer": {
     "$designer": {
       "name": "DDayBot-3",
-      "description": "",
       "id": "1apzOb"
     }
   },
@@ -86,7 +85,8 @@
           },
           "activityProcessed": true
         }
-      ]
+      ],
+      "defaultResultProperty": "dialog.result"
     },
     {
       "$kind": "Microsoft.OnIntent",
