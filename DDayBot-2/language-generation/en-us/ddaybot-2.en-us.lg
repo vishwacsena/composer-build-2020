@@ -25,11 +25,9 @@
 - Sorry, I did not find any facts for that date..
 # SendActivity_1WQvxe()
 - ${FactsReadBack()}
-
-> New templates
 # WelcomeUser
 [Activity
-    Text = ${GreetPhrase()}, I'm the D-Day bot. ${HelpQuestion()}
+    Text = ${GreetPhrase()}, I’m the D-Day bot. ${HelpQuestion()}
     SuggestedActions = How many days | Historic facts | Profile | Help | Cancel
  ]
 
@@ -40,11 +38,10 @@
 
 # HelpQuestion
 - How can I help? 
-- What's on your mind?
+- What’s on your mind?
 
 
-
-# SendActivity_sjuzvR()
+# SendActivity_DUH8fR()
 [Activity
     Type = typing
 ]

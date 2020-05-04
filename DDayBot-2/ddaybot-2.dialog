@@ -325,9 +325,9 @@
         {
           "$kind": "Microsoft.SendActivity",
           "$designer": {
-            "id": "sjuzvR"
+            "id": "DUH8fR"
           },
-          "activity": "${SendActivity_sjuzvR()}"
+          "activity": "${SendActivity_DUH8fR()}"
         },
         {
           "$kind": "Microsoft.HttpRequest",

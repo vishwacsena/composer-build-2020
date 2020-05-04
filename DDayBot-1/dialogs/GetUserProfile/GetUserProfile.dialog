@@ -85,5 +85,6 @@
       ]
     }
   ],
-  "generator": "GetUserProfile.lg"
+  "generator": "GetUserProfile.lg",
+  "activityProcessed": true
 }

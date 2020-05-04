@@ -40,12 +40,16 @@
                   },
                   "activity": "${help()}"
                 }
-              ]
+              ],
+              "value": "dialog.foreach.value"
             }
-          ]
+          ],
+          "value": "dialog.foreach.value",
+          "index": "dialog.foreach.index"
         }
       ],
-      "defaultResultProperty": "dialog.result"
+      "defaultResultProperty": "dialog.result",
+      "value": "dialog.foreach.value"
     },
     {
       "$kind": "Microsoft.OnIntent",
@@ -103,7 +107,8 @@
           "activityProcessed": true,
           "dialog": "GetUserProfile"
         }
-      ]
+      ],
+      "activityProcessed": true
     },
     {
       "$kind": "Microsoft.OnIntent",

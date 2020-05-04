@@ -13,7 +13,6 @@
 # SendActivity_p15tPb()
 - ${ProfileReadBack()}
 
-> Additional templates
 # ProfileReadBack
 - ${AckPhrase()} ${user.profile.name}. Your next birthday is on ${DateReadBack(user.profile.birthday)}. ${ZodiacReadBack(user.profile.birthday)}
 
