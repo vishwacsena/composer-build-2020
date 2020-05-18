@@ -3,7 +3,6 @@
   "$designer": {
     "$designer": {
       "name": "BirthDayBot-3",
-      "description": "",
       "id": "No52Lb"
     }
   },
@@ -128,7 +127,7 @@
               "$designer": {
                 "id": "bdzyPh"
               },
-              "condition": "user.profile.birthday",
+              "condition": "user.profile.birthday != null",
               "elseActions": [
                 {
                   "$kind": "Microsoft.SendActivity",
@@ -243,7 +242,7 @@
               "$designer": {
                 "id": "n3PHyh"
               },
-              "condition": "user.profile.birthday",
+              "condition": "user.profile.birthday != null",
               "elseActions": [
                 {
                   "$kind": "Microsoft.SendActivity",

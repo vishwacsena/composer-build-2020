@@ -2,8 +2,8 @@
   "$kind": "Microsoft.AdaptiveDialog",
   "$designer": {
     "$designer": {
-      "name": "BirthDayBot-2",
-      "id": "duZ1Op"
+      "name": "Birthday-bot3",
+      "id": "UeUXds"
     }
   },
   "autoEndDialog": "true",
@@ -85,7 +85,8 @@
           },
           "activityProcessed": true
         }
-      ]
+      ],
+      "defaultResultProperty": "dialog.result"
     },
     {
       "$kind": "Microsoft.OnIntent",
@@ -325,9 +326,9 @@
         {
           "$kind": "Microsoft.SendActivity",
           "$designer": {
-            "id": "DUH8fR"
+            "id": "sjuzvR"
           },
-          "activity": "${SendActivity_DUH8fR()}"
+          "activity": "${SendActivity_sjuzvR()}"
         },
         {
           "$kind": "Microsoft.HttpRequest",
@@ -400,6 +401,6 @@
     }
   ],
   "$schema": "https://raw.githubusercontent.com/microsoft/BotFramework-Composer/stable/Composer/packages/server/schemas/sdk.schema",
-  "generator": "birthdaybot-2.lg",
-  "recognizer": "birthdaybot-2.lu"
+  "generator": "birthday-bot3.lg",
+  "recognizer": "birthday-bot3.lu"
 }

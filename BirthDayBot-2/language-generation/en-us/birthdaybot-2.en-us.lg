@@ -2,7 +2,7 @@
 # help()
 - ${WelcomeUser()}
 # SendActivity_1vzU5f()
-- Sure, I'm happy to help. I'm a simple D-Day counter bot. You can ask me 'How many days till <eventName>'
+- Sure, I'm happy to help. I'm a simple BirthDay counter bot. You can ask me 'How many days till <eventName>'
 # SendActivity_aAB8ly()
 - Sure, I'll cancel that.
 # SendActivity_3d24c9()
@@ -27,7 +27,7 @@
 - ${FactsReadBack()}
 # WelcomeUser
 [Activity
-    Text = ${GreetPhrase()}, I’m the D-Day bot. ${HelpQuestion()}
+    Text = ${GreetPhrase()}, I’m the BirthDay bot. ${HelpQuestion()}
     SuggestedActions = How many days | Historic facts | Profile | Help | Cancel
  ]
 

@@ -19,17 +19,15 @@
 # DateTimeInput_InvalidPrompt_yam15a()
 - Sorry. I just need the date and month please.
 # SendActivity_3SknJ6()
-- Looking up facts for ${formatDateTime(turn.birthDay, 'dddd, MMMM ddd')}..
+- Looking up facts for ${formatDateTime(turn.birthDay, 'dddd, MMMM dd')}..
 
 # SendActivity_RC5Dqy()
 - Sorry, I did not find any facts for that date..
 # SendActivity_1WQvxe()
 - ${FactsReadBack()}
-
-> New templates
 # WelcomeUser
 [Activity
-    Text = ${GreetPhrase()}, I'm the BirthDay bot. ${HelpQuestion()}
+    Text = ${GreetPhrase()}, I’m the BirthDay bot. ${HelpQuestion()}
     SuggestedActions = How many days | Historic facts | Profile | Help | Cancel
  ]
 
@@ -40,11 +38,10 @@
 
 # HelpQuestion
 - How can I help? 
-- What's on your mind?
+- What’s on your mind?
 
 
-
-# SendActivity_sjuzvR()
+# SendActivity_DUH8fR()
 [Activity
     Type = typing
 ]

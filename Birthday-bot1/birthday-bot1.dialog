@@ -2,8 +2,8 @@
   "$kind": "Microsoft.AdaptiveDialog",
   "$designer": {
     "$designer": {
-      "name": "BirthDayBot-2",
-      "id": "duZ1Op"
+      "name": "Birthday-bot1",
+      "id": "BJAKH6"
     }
   },
   "autoEndDialog": "true",
@@ -40,12 +40,16 @@
                   },
                   "activity": "${help()}"
                 }
-              ]
+              ],
+              "value": "dialog.foreach.value"
             }
-          ]
+          ],
+          "value": "dialog.foreach.value",
+          "index": "dialog.foreach.index"
         }
       ],
-      "defaultResultProperty": "dialog.result"
+      "defaultResultProperty": "dialog.result",
+      "value": "dialog.foreach.value"
     },
     {
       "$kind": "Microsoft.OnIntent",
@@ -103,7 +107,8 @@
           "activityProcessed": true,
           "dialog": "GetUserProfile"
         }
-      ]
+      ],
+      "activityProcessed": true
     },
     {
       "$kind": "Microsoft.OnIntent",
@@ -323,13 +328,6 @@
           "activity": "${SendActivity_3SknJ6()}"
         },
         {
-          "$kind": "Microsoft.SendActivity",
-          "$designer": {
-            "id": "DUH8fR"
-          },
-          "activity": "${SendActivity_DUH8fR()}"
-        },
-        {
           "$kind": "Microsoft.HttpRequest",
           "$designer": {
             "id": "snlFaB"
@@ -400,6 +398,6 @@
     }
   ],
   "$schema": "https://raw.githubusercontent.com/microsoft/BotFramework-Composer/stable/Composer/packages/server/schemas/sdk.schema",
-  "generator": "birthdaybot-2.lg",
-  "recognizer": "birthdaybot-2.lu"
+  "generator": "birthday-bot1.lg",
+  "recognizer": "birthday-bot1.lu"
 }

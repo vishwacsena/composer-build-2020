@@ -13,7 +13,6 @@
 # SendActivity_p15tPb()
 - ${ProfileReadBack()}
 
-> Additional templates
 # ProfileReadBack
 - ${AckPhrase()} ${user.profile.name}. Your next birthday is on ${DateReadBack(user.profile.birthday)}. ${ZodiacReadBack(user.profile.birthday)}
 
@@ -62,5 +61,3 @@
 - Thanks
 - Thank you
 - That's great
-# SendActivity_rLhqRN()
-- I need your name to address you correctly. I need your date and month of birth to answer questions about your BirthDay as well as find hitoric facts.

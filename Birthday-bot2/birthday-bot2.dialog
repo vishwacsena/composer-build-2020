@@ -2,8 +2,8 @@
   "$kind": "Microsoft.AdaptiveDialog",
   "$designer": {
     "$designer": {
-      "name": "BirthDayBot-2",
-      "id": "duZ1Op"
+      "name": "Birthday-bot2",
+      "id": "MzTQgX"
     }
   },
   "autoEndDialog": "true",
@@ -400,6 +400,6 @@
     }
   ],
   "$schema": "https://raw.githubusercontent.com/microsoft/BotFramework-Composer/stable/Composer/packages/server/schemas/sdk.schema",
-  "generator": "birthdaybot-2.lg",
-  "recognizer": "birthdaybot-2.lu"
+  "generator": "birthday-bot2.lg",
+  "recognizer": "birthday-bot2.lu"
 }
