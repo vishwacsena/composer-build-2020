@@ -1,7 +1,0 @@
-{
-    "$kind": "Microsoft.MultiLanguageRecognizer",
-    "recognizers": {
-        "en-us": "birthdaybot-1.en-us.lu",
-        "": "birthdaybot-1.en-us.lu"
-    }
-}
