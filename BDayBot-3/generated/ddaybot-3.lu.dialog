@@ -1,7 +1,0 @@
-{
-    "$kind": "Microsoft.MultiLanguageRecognizer",
-    "recognizers": {
-        "en-us": "ddaybot-3.en-us.lu",
-        "": "ddaybot-3.en-us.lu"
-    }
-}
