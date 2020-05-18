@@ -2,8 +2,9 @@
   "$kind": "Microsoft.AdaptiveDialog",
   "$designer": {
     "$designer": {
-      "name": "DDayBot-1",
-      "id": "BQpP3K"
+      "name": "BDayBot-2",
+      "description": "",
+      "id": "CtbRDV"
     }
   },
   "autoEndDialog": "true",
@@ -40,16 +41,12 @@
                   },
                   "activity": "${help()}"
                 }
-              ],
-              "value": "dialog.foreach.value"
+              ]
             }
-          ],
-          "value": "dialog.foreach.value",
-          "index": "dialog.foreach.index"
+          ]
         }
       ],
-      "defaultResultProperty": "dialog.result",
-      "value": "dialog.foreach.value"
+      "defaultResultProperty": "dialog.result"
     },
     {
       "$kind": "Microsoft.OnIntent",
@@ -107,8 +104,7 @@
           "activityProcessed": true,
           "dialog": "GetUserProfile"
         }
-      ],
-      "activityProcessed": true
+      ]
     },
     {
       "$kind": "Microsoft.OnIntent",
@@ -328,6 +324,13 @@
           "activity": "${SendActivity_3SknJ6()}"
         },
         {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "DUH8fR"
+          },
+          "activity": "${SendActivity_DUH8fR()}"
+        },
+        {
           "$kind": "Microsoft.HttpRequest",
           "$designer": {
             "id": "snlFaB"
@@ -398,6 +401,6 @@
     }
   ],
   "$schema": "https://raw.githubusercontent.com/microsoft/BotFramework-Composer/stable/Composer/packages/server/schemas/sdk.schema",
-  "generator": "ddaybot-1.lg",
-  "recognizer": "ddaybot-1.lu"
+  "generator": "bdaybot-2.lg",
+  "recognizer": "bdaybot-2.lu"
 }

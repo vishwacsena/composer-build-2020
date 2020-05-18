@@ -2,8 +2,9 @@
   "$kind": "Microsoft.AdaptiveDialog",
   "$designer": {
     "$designer": {
-      "name": "DDayBot-3",
-      "id": "1apzOb"
+      "name": "BDayBot-3",
+      "description": "",
+      "id": "60griK"
     }
   },
   "autoEndDialog": "true",
@@ -401,6 +402,6 @@
     }
   ],
   "$schema": "https://raw.githubusercontent.com/microsoft/BotFramework-Composer/stable/Composer/packages/server/schemas/sdk.schema",
-  "generator": "ddaybot-3.lg",
-  "recognizer": "ddaybot-3.lu"
+  "generator": "bdaybot-3.lg",
+  "recognizer": "bdaybot-3.lu"
 }
